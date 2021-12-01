@@ -2,3 +2,44 @@
   margin: 0;
   padding: 0;
 }
+
+body {
+  display: grid;
+  background-color: #dae3e3;
+  font-family: Segoe UI, sans-serif;
+}
+
+header {
+  grid-area: header;
+  background-color: white;
+  z-index: 6;
+}
+
+.nav-ul {
+  position: relative;
+  float: right;
+  list-style-type: none;
+}
+
+.nav-li {
+  text-decoration: none;
+  font-size: 200%;
+}
+
+footer {
+  grid-area: footer;
+  grid-column: span 4;
+  position: relative;
+  background-color: white;
+}
+
+.social-media {
+  width: 80%;
+}
+
+.fb-icon,
+.insta-icon,
+.twitter-icon {
+  width: 10%;
+  margin: 0 10% 0 10%;
+}
