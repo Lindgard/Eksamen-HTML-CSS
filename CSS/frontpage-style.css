@@ -4,66 +4,129 @@
 }
 
 body {
-  display: grid;
-  grid-template-columns: 1fr;
   background-color: #dae3e3;
   font-family: Segoe UI, sans-serif;
-  grid-template-areas:
-    "header"
-    "main"
-    "footer";
 }
 
 header {
-  grid-area: header;
+  position: sticky;
+  top: 0;
+  width: 99%;
+  padding: 0.5%;
   background-color: white;
-  z-index: 6;
+  z-index: 1;
+}
+
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1 {
+  position: relative;
+  width: 20%;
+  font-size: 300%;
+}
+
+.logo {
+  position: relative;
+  box-shadow: none;
+  float: left;
 }
 
 .nav-ul {
+  display: flex;
   position: relative;
+  width: 50%;
   float: right;
   list-style-type: none;
+  margin: 2.5% 0 2.5% 0;
+  justify-content: space-evenly;
 }
 
 .nav-li {
+  display: inline-block;
+  position: relative;
   text-decoration: none;
+  text-transform: uppercase;
   font-size: 200%;
+  color: #04243c;
+}
+
+.nav-li:hover {
+  color: #61c0c1;
+}
+
+.nav-li::before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color: #61c0c1;
+  
+  position: absolute;
+}
+
+.nav-li:hover::before {
+  width: 100%;
+
+  transition: all ease-in-out 250ms;
 }
 
 main {
+  overflow: auto;
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-area: main;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
-    "seal seal shark"
-    "sea-lion txt txt"
-    "butterfly koi koi"
-    "catfish lionfish lionfish";
+    "container1 container1"
+    "txt container2"
+    "txt container2"
+    "container3 container3";
+  gap: 0.5em;
+  margin: 1%;
 }
 
-#seal {
-  grid-area: seal;
-}
-
-#shark {
-  grid-area: shark;
-}
-
-.txt-box {
-  position: absolute;
-  grid-area: txt;
-  font-size: x-large;
-  border: 2px solid #04243c;
+img {
+  border-radius: 15px;
   box-shadow: 5px 10px 15px #04243c;
 }
 
+.img-container-1 {
+  grid-area: container1;
+}
+
+#seal {
+  position: relative;
+  width: 45%;
+}
+
+#shark {
+  position: relative;
+  width: 47%;
+}
+
+.txt-box {
+  grid-area: txt;
+  font-size: x-large;
+  background-color: #04243c;
+  border: 2px solid #04243c;
+  box-shadow: 5px 10px 15px #04243c;
+  border-radius: 15px;
+  text-align: center;
+}
+
 h2 {
-  color: #04243c;
+  color: #61c0c1;
 }
 
 .sea-lion-txt {
-  color: #04243c;
+  color: #61c0c1;
+}
+
+.img-container-2 {
+  grid-area: container2;
 }
 
 #sea-lion {
@@ -74,12 +137,19 @@ h2 {
   grid-area: butterfly;
 }
 
+.img-container-3 {
+  grid-area: container3;
+  margin-bottom: 1%;
+}
+
 #koifish {
   grid-area: koi;
+  width: 100%;
 }
 
 #catfish {
   grid-area: catfish;
+  width: 45%;
 }
 
 #lionfish {
@@ -87,10 +157,16 @@ h2 {
 }
 
 footer {
-  grid-area: footer;
-  grid-column: span 4;
   position: relative;
+  width: 100%;
   background-color: white;
+  bottom: 0;
+}
+
+footer::after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
 .social-media {
@@ -101,5 +177,12 @@ footer {
 .insta-icon,
 .twitter-icon {
   width: 10%;
-  margin: 0 10% 0 10%;
+  margin: 2% 10% 0 10%;
+  box-shadow: none;
+}
+
+#copyright {
+  position: relative;
+  float: right;
+  text-transform: uppercase;
 }

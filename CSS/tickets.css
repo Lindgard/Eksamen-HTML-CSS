@@ -7,3 +7,100 @@ body {
   background-color: #dae3e3;
   font-family: Segoe UI, sans-serif;
 }
+
+header {
+  position: sticky;
+  top: 0;
+  width: 99%;
+  padding: 0.5%;
+  background-color: white;
+  z-index: 1;
+}
+
+header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1 {
+  position: relative;
+  width: 20%;
+  font-size: 300%;
+}
+
+.logo {
+  position: relative;
+  box-shadow: none;
+  float: left;
+}
+
+.nav-ul {
+  display: flex;
+  position: relative;
+  width: 50%;
+  float: right;
+  list-style-type: none;
+  margin: 2.5% 0 2.5% 0;
+  justify-content: space-evenly;
+}
+
+.nav-li {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 200%;
+  color: #04243c;
+}
+
+.nav-li:hover {
+  color: #61c0c1;
+}
+
+.nav-li::before {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 0%;
+  background-color: #61c0c1;
+  
+  position: absolute;
+}
+
+.nav-li:hover::before {
+  width: 100%;
+
+  transition: all ease-in-out 250ms;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  background-color: white;
+  bottom: 0;
+}
+
+footer::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.social-media {
+  width: 80%;
+}
+
+.fb-icon,
+.insta-icon,
+.twitter-icon {
+  width: 10%;
+  margin: 2% 10% 0 10%;
+  box-shadow: none;
+}
+
+#copyright {
+  position: relative;
+  float: right;
+  text-transform: uppercase;
+}
