@@ -64,7 +64,7 @@ h1 {
   height: 5px;
   width: 0%;
   background-color: #61c0c1;
-  
+
   position: absolute;
 }
 
@@ -72,6 +72,13 @@ h1 {
   width: 100%;
 
   transition: all ease-in-out 250ms;
+}
+
+main {
+  overflow: auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 footer {

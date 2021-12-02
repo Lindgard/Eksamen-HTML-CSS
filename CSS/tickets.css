@@ -64,7 +64,7 @@ h1 {
   height: 5px;
   width: 0%;
   background-color: #61c0c1;
-  
+
   position: absolute;
 }
 
@@ -72,6 +72,78 @@ h1 {
   width: 100%;
 
   transition: all ease-in-out 250ms;
+}
+
+.grid-container {
+  display: grid;
+  height: fit-content;
+  justify-content: center;
+  margin: 5em;
+  grid-template-areas:
+    "child youth"
+    "adult season";
+  gap: 5em;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+  font-size: xx-large;
+}
+
+.ticket-children,
+.ticket-youth,
+.ticket-adults,
+.ticket-seasonpass {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 8px;
+  box-shadow: 5px 10px 15px black;
+  width: 30em;
+}
+
+.txt-children,
+.txt-youth,
+.txt-adults,
+.txt-season {
+  padding: 2em;
+}
+
+#blue,
+#red,
+#siamese,
+#koi {
+  width: 30em;
+}
+
+.ticket-children {
+  grid-area: child;
+}
+
+.ticket-youth {
+  grid-area: youth;
+}
+
+.ticket-adults {
+  grid-area: adult;
+}
+
+.ticket-seasonpass {
+  grid-area: season;
+}
+
+.price-1,
+.price-2,
+.price-3,
+.price-4 {
+  font-size: xx-large;
+  font-weight: bold;
+  float: right;
 }
 
 footer {
