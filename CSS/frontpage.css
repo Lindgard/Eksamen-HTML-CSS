@@ -121,16 +121,6 @@ h2 {
   grid-area: container2;
 }
 
-#sea-lion {
-  grid-area: sea-lion;
-  width: 100%;
-}
-
-#butterfly {
-  grid-area: butterfly;
-  width: 100%;
-}
-
 #catfish {
   grid-area: catfish;
   width: 100%;
@@ -141,6 +131,19 @@ h2 {
   grid-area: lionfish;
   width: 100%;
   margin-bottom: 0;
+}
+
+#sea-lion {
+  grid-area: sea-lion;
+  width: 100%;
+  margin: 0;
+}
+
+#butterfly {
+  grid-area: butterfly;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 footer {
@@ -169,4 +172,49 @@ footer::after {
   width: 8%;
   margin: 3em 0 2em 0;
   box-shadow: none;
+}
+
+@media only screen and (max-width: 1100px) {
+  main {
+    overflow: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "seal seal"
+      "txt container2"
+      "txt container2"
+      "sea-lion butterfly";
+    gap: 2em;
+    padding: 2em;
+  }
+
+  .img-container-2 {
+    height: fit-content;
+  }
+
+  .txt-box {
+    height: 25em;
+    overflow-y: scroll;
+  }
+
+  #sea-lion {
+    grid-area: sea-lion;
+    width: 100%;
+    margin: 0;
+  }
+
+  #butterfly {
+    grid-area: butterfly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 }
