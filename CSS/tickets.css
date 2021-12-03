@@ -101,9 +101,9 @@ h3 {
 .ticket-adults,
 .ticket-seasonpass {
   background-color: white;
-  border: 1px solid #61c0c1;
+  border: 1px solid #34948c;
   border-radius: 8px;
-  box-shadow: 5px 10px 15px #61c0c1;
+  box-shadow: 5px 10px 15px #34948c;
   width: 30em;
   height: 40em;
 }
@@ -113,6 +113,7 @@ h3 {
 .txt-adults,
 .txt-season {
   padding: 2em;
+  color: #34948c;
 }
 
 #blue,
@@ -151,17 +152,18 @@ h3 {
 
 .contact-container {
   display: flex;
-  justify-content: space-between;
   position: relative;
+  justify-content: space-between;
   width: 100%;
   font-size: 300%;
-  margin-bottom: 1em;
+  margin: 0 0 1em 0;
 }
 
 .contact-txt {
   position: relative;
   width: 70%;
   color: #04243c;
+  margin-left: 2em;
 }
 
 .contact-btn {
