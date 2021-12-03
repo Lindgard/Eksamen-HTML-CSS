@@ -22,9 +22,19 @@
     <main>
       <div class="contact-box">
         <h1>Kontakt Oss</h1>
+        <br>
+        <form action="/HTML/contact.html">
+          <label for="name" id="name-label">Navn</label>
+          <input type="text" placeholder="Legg inn ditt navn her" id="name" />
+          <label for="email" id="email-label">Epost</label>
+          <input type="email" name="email" id="email" />
+          <label for="txt-area" id="txt-label">Ditt spørsmål</label>
+          <textarea name="txt-area" id="txt-area" cols="30" rows="10"></textarea>
+          <input type="submit" value="send inn" id="submit">
+        </form>
       </div>
       <div class="about-box">
-        <h3>Om Oss</h3>
+        <h1>Om Oss</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
           congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec odio
@@ -110,7 +120,6 @@
           class="twitter-icon"
         />
       </div>
-      <p id="copyright">Copyright &copy;</p>
     </footer>
   </body>
 </html>

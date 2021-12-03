@@ -22,66 +22,78 @@
     <main>
       <h1>Billetter</h1>
       <div class="grid-container">
-      <div class="ticket-children">
-        <img src="/Assets/artsy fish.jpg" alt="blue fish" id="blue" />
-        <div class="txt-children">
-          <h3>Barnebillett</h3>
-          <br>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
-            odio lobortis fringilla id ut turpis.
-          </p>
-          <br>
-          <p class="price-1">49,- kr</p>
+        <div class="ticket-children">
+          <img src="/Assets/artsy fish.jpg" alt="blue fish" id="blue" />
+          <div class="txt-children">
+            <h3>Barnebillett</h3>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
+              odio lobortis fringilla id ut turpis.
+            </p>
+            <br />
+            <p class="price-1">49,- kr</p>
+          </div>
+        </div>
+        <div class="ticket-youth">
+          <img src="/Assets/red fish.jpg" alt="red fish" id="red" />
+          <div class="txt-youth">
+            <h3>Ungdomsbillett</h3>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
+              odio lobortis fringilla id ut turpis.
+            </p>
+            <br />
+            <p class="price-2">79,- kr</p>
+          </div>
+        </div>
+        <div class="ticket-adults">
+          <img
+            src="/Assets/siamese fighting fish.jpg"
+            alt="siamese fighting fish"
+            id="siamese"
+          />
+          <div class="txt-adults">
+            <h3>Voksenbillett</h3>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
+              odio lobortis fringilla id ut turpis.
+            </p>
+            <br />
+            <p class="price-3">99,- kr</p>
+          </div>
+        </div>
+        <div class="ticket-seasonpass">
+          <img src="/Assets/koi-fish.jpg" alt="koi" id="koi" />
+          <div class="txt-season">
+            <h3>Sesongkort for hele familien</h3>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
+              odio lobortis fringilla id ut turpis.
+            </p>
+            <br />
+            <p class="price-4">999,- kr</p>
+          </div>
         </div>
       </div>
-      <div class="ticket-youth">
-        <img src="/Assets/red fish.jpg" alt="red fish" id="red" />
-        <div class="txt-youth">
-          <h3>Ungdomsbillett</h3>
-          <br>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
-            odio lobortis fringilla id ut turpis.
-          </p>
-          <br>
-          <p class="price-2">79,- kr</p>
-        </div>
-      </div>
-      <div class="ticket-adults">
-        <img
-          src="/Assets/siamese fighting fish.jpg"
-          alt="siamese fighting fish"
-          id="siamese"
-        />
-        <div class="txt-adults">
-          <h3>Voksenbillett</h3>
-          <br>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
-            odio lobortis fringilla id ut turpis.
-          </p>
-          <br>
-          <p class="price-3">99,- kr</p>
-        </div>
-      </div>
-      <div class="ticket-seasonpass">
-        <img src="/Assets/koi-fish.jpg" alt="koi" id="koi" />
-        <div class="txt-season">
-          <h3>Sesongkort for hele familien</h3>
-          <br>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
-            congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
-            odio lobortis fringilla id ut turpis.
-          </p>
-          <br>
-          <p class="price-4">999,- kr</p>
-        </div>
-      </div>
+      <div class="contact-container">
+        <p class="contact-txt">Hvis du har flere spørsmål kontakt oss her!</p>
+      
+      <!--brukt en linje javascript fra w3schools for å slippe ekstra a-tagg-->
+      <!--og å ha renere design på selve button-->
+      <button
+        onclick="document.location='/HTML/contact.html'"
+        class="contact-btn"
+      >
+        Kontakt Oss
+      </button>
     </div>
     </main>
     <footer>
@@ -98,7 +110,6 @@
           class="twitter-icon"
         />
       </div>
-      <p id="copyright">Copyright &copy;</p>
     </footer>
   </body>
 </html>
