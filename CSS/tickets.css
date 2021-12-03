@@ -142,15 +142,6 @@ h3 {
   grid-area: season;
 }
 
-.price-1,
-.price-2,
-.price-3,
-.price-4 {
-  font-size: xx-large;
-  font-weight: bold;
-  float: right;
-}
-
 .contact-container {
   display: flex;
   position: relative;
@@ -167,6 +158,24 @@ h3 {
   margin-left: 2em;
 }
 
+.price-1,
+.price-2,
+.price-3,
+.price-4 {
+  font-size: xx-large;
+  font-weight: bold;
+  float: right;
+  color: #04243c;
+  background-color: #61c0c1;
+
+  width: 30%;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  animation: colorchange 3s ease-in-out infinite alternate;
+}
+
 .contact-btn {
   position: relative;
   width: 20%;
@@ -178,7 +187,7 @@ h3 {
   cursor: pointer;
   font-weight: bolder;
 
-  animation: colorchange 2s ease-in-out infinite alternate;
+  animation: colorchange 3s ease-in-out infinite alternate;
 }
 
 @keyframes colorchange {

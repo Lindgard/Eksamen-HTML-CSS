@@ -10,7 +10,7 @@ body {
 
 img {
   border-radius: 15px;
-  box-shadow: 5px 10px 15px #04243c;
+  box-shadow: 5px 10px 15px #61c0c1;
   margin: 1em 0 2em 0;
 }
 
@@ -28,12 +28,6 @@ header::after {
   content: "";
   display: block;
   clear: both;
-}
-
-h1 {
-  position: relative;
-  width: 20%;
-  font-size: 300%;
 }
 
 .logo {
@@ -94,7 +88,7 @@ main {
     "txt container2"
     "sea-lion butterfly";
   gap: 2em;
-  margin: 2em;
+  padding: 2em;
 }
 
 #seal {

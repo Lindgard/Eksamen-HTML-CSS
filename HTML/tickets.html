@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/CSS/tickets.css" />
-    <title>Tickets</title>
+    <title>Kjøp Billetter</title>
   </head>
   <body>
     <header>
@@ -33,7 +33,13 @@
               odio lobortis fringilla id ut turpis.
             </p>
             <br />
-            <p class="price-1">49,- kr</p>
+            <!--brukt en linje javascript fra w3schools for å slippe ekstra a-tagg-->
+            <button
+              onclick="document.location='/HTML/tickets.html'"
+              class="price-1"
+            >
+              49,- kr
+            </button>
           </div>
         </div>
         <div class="ticket-youth">
@@ -47,7 +53,12 @@
               odio lobortis fringilla id ut turpis.
             </p>
             <br />
-            <p class="price-2">79,- kr</p>
+            <button
+              onclick="document.location='/HTML/tickets.html'"
+              class="price-2"
+            >
+              79,- kr
+            </button>
           </div>
         </div>
         <div class="ticket-adults">
@@ -65,7 +76,12 @@
               odio lobortis fringilla id ut turpis.
             </p>
             <br />
-            <p class="price-3">99,- kr</p>
+            <button
+              onclick="document.location='/HTML/tickets.html'"
+              class="price-3"
+            >
+              99,- kr
+            </button>
           </div>
         </div>
         <div class="ticket-seasonpass">
@@ -79,15 +95,18 @@
               odio lobortis fringilla id ut turpis.
             </p>
             <br />
-            <p class="price-4">999,- kr</p>
+            <button
+              onclick="document.location='/HTML/tickets.html'"
+              class="price-4"
+            >
+              999,- kr
+            </button>
           </div>
         </div>
       </div>
       <div class="contact-container">
         <p class="contact-txt">Hvis du har flere spørsmål kontakt oss her!</p>
 
-        <!--brukt en linje javascript fra w3schools for å slippe ekstra a-tagg-->
-        <!--og å ha renere design på selve button-->
         <button
           onclick="document.location='/HTML/contact.html'"
           class="contact-btn"
