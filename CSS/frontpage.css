@@ -3,24 +3,33 @@
   padding: 0;
 }
 
+:root {
+  --primary: #61c0c1;
+  --secondary: #04243c;
+  --tertiary: #34948c;
+  --background: #dae3e3;
+}
+
 body {
-  background-color: #dae3e3;
+  background-color: var(--background);
   font-family: Segoe UI, sans-serif;
 }
 
 img {
   border-radius: 15px;
-  box-shadow: 5px 10px 15px #61c0c1;
+  box-shadow: 5px 10px 15px var(--tertiary);
   margin: 1em 0 2em 0;
 }
 
 header {
   position: sticky;
   top: 0;
-  width: 99%;
+  height: fit-content;
+  width: 100%;
   padding: 0.5%;
   background-color: white;
-  z-index: 1;
+  opacity: 0.9;
+  z-index: 99;
 }
 
 /*brukte denne biten for å unngå at header-bakgrunn ble borte*/
@@ -32,12 +41,24 @@ header::after {
 
 .logo {
   position: relative;
+  width: 10em;
   box-shadow: none;
   float: left;
   margin: 0;
 }
 
-/* nav-bar starter her*/
+/* checkbox og label for ren css-hamburger gjemt på desktop */
+.nav-toggler {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+}
+
+.nav-toggler-label {
+  display: none;
+}
+
+/* nav-bar starter her */
 .nav-ul {
   display: flex;
   position: relative;
@@ -54,11 +75,11 @@ header::after {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 200%;
-  color: #04243c;
+  color: var(--secondary);
 }
 
 .nav-li:hover {
-  color: #61c0c1;
+  color: var(--primary);
 }
 
 .nav-li::before {
@@ -66,7 +87,7 @@ header::after {
   display: block;
   height: 5px;
   width: 0%;
-  background-color: #61c0c1;
+  background-color: var(--primary);
 
   position: absolute;
 }
@@ -91,7 +112,7 @@ main {
   padding: 2em;
 }
 
-#seal {
+.seal {
   grid-area: seal;
   position: relative;
   width: 100%;
@@ -100,46 +121,47 @@ main {
 
 .txt-box {
   grid-area: txt;
-  font-size: x-large;
-  background-color: #04243c;
-  border: 2px solid #61c0c1;
-  box-shadow: 5px 10px 15px #61c0c1;
+  font-size: 1.5rem;
+  background-color: var(--secondary);
+  border: 2px solid var(--primary);
+  box-shadow: 5px 10px 15px var(--primary);
   border-radius: 15px;
   text-align: center;
   padding: 1.5em;
 }
 
 h2 {
-  color: #61c0c1;
+  color: var(--primary);
 }
 
 .sea-lion-txt {
-  color: #61c0c1;
+  color: var(--primary);
 }
 
 .img-container-2 {
   grid-area: container2;
+  height: fit-content;
 }
 
-#catfish {
+.catfish {
   grid-area: catfish;
   width: 100%;
   margin-top: 0;
 }
 
-#lionfish {
+.lionfish {
   grid-area: lionfish;
   width: 100%;
   margin-bottom: 0;
 }
 
-#sea-lion {
+.sea-lion {
   grid-area: sea-lion;
   width: 100%;
   margin: 0;
 }
 
-#butterfly {
+.butterfly {
   grid-area: butterfly;
   width: 100%;
   margin: 0;
@@ -175,46 +197,156 @@ footer::after {
 }
 
 @media only screen and (max-width: 1100px) {
-  main {
-    overflow: auto;
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    width: 100%;
+    position: sticky;
+  }
+
+  .logo {
+    float: right;
+    margin-right: 5vw;
+  }
+
+  .nav-toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 2em;
+    display: none;
+    z-index: 2;
+  }
+
+  .nav-toggler-label {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 2em;
+    height: 100%;
+    align-items: center;
+  }
+
+  .nav-toggler:checked ~ nav {
+    transform: scale(1);
+  }
+
+  .nav-toggler-label span,
+  .nav-toggler-label span::before,
+  .nav-toggler-label span::after {
+    display: flex;
     position: relative;
+    background-color: var(--secondary);
+    height: 0.7em;
+    width: 4em;
+    border-radius: 4px;
+  }
+
+  .nav-toggler-label span::before,
+  .nav-toggler-label span::after {
+    content: "";
+    position: absolute;
+  }
+
+  .nav-toggler-label span::before {
+    top: 20px;
+  }
+
+  .nav-toggler-label span::after {
+    bottom: 20px;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+
+    transform: scale(1, 0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  .nav-ul {
+    position: absolute;
+    display: flex;
+    width: 15%;
+    flex-direction: column;
+    list-style: none;
+    background-color: white;
+    padding: 1em 1em 1em 2em;
+  }
+
+  .nav-li {
+    font-size: 1.3em;
+    margin-top: 0.5em;
+    opacity: 0;
+
+    transition: opacity 250ms ease-in-out 300ms;
+  }
+
+  .nav-toggler:checked ~ nav a {
+    opacity: 1;
+  }
+
+  
+
+  main {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    width: 87vw;
     grid-template-areas:
       "seal seal"
       "txt container2"
       "txt container2"
       "sea-lion butterfly";
-    gap: 2em;
-    padding: 2em;
-  }
-
-  .img-container-2 {
-    height: fit-content;
   }
 
   .txt-box {
     height: 25em;
     overflow-y: scroll;
   }
-
-  #sea-lion {
-    grid-area: sea-lion;
-    width: 100%;
-    margin: 0;
-  }
-
-  #butterfly {
-    grid-area: butterfly;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-  }
 }
 
 @media only screen and (max-width: 750px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    position: sticky;
+    width: 100%;
+  }
+
+  .logo {
+    width: 15vw;
+    margin-right: 5vw;
+  }
+  
+  .nav-toggler-label span,
+  .nav-toggler-label span::before,
+  .nav-toggler-label span::after {
+    height: 0.5em;
+    width: 3em;
+  }
+
+  .nav-ul {
+    width: 20%;
+    padding: 1em 1em 1em 2em;
+  }
+
+  .nav-li {
+    font-size: 1em;
+    margin-top: 0.5em;
+  }
+
   main {
     display: flex;
     flex-direction: column;
+    margin: 0;
+    padding: 1em;
+    width: 90%;
   }
 }

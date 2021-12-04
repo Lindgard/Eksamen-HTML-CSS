@@ -10,17 +10,23 @@
   <body>
     <header>
       <img
-        src="/Assets/Sandefjord Aquarium Logo.png"
+        src="/Assets/Sandefjord Aquarium logo.png"
         alt="Company logo"
         class="logo"
       />
-      <ul class="nav-ul">
-        <li><a href="/HTML/tickets.html" class="nav-li">Billetter</a></li>
-        <li><a href="/HTML/contact.html" class="nav-li">Kontakt</a></li>
-      </ul>
+      <input type="checkbox" id="nav-toggler" class="nav-toggler" />
+      <nav class="navigation">
+        <ul class="nav-ul">
+          <li><a href="/HTML/tickets.html" class="nav-li">Billetter</a></li>
+          <li><a href="/HTML/contact.html" class="nav-li">Kontakt</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggler" class="nav-toggler-label">
+        <span></span>
+      </label>
     </header>
     <main>
-      <img src="/Assets/seal.jpg" alt="Seal waving" id="seal" />
+      <img src="/Assets/seal.jpg" alt="Seal waving" class="seal" />
       <div class="txt-box">
         <h2>Se vårt fantastiske sjøløve-show!</h2>
         <p class="sea-lion-txt">
@@ -59,14 +65,14 @@
         </p>
       </div>
       <div class="img-container-2">
-        <img src="/Assets/catfish.jpg" alt="catfish" id="catfish" />
-        <img src="/Assets/lionfish.jpg" alt="lionfish" id="lionfish" />
+        <img src="/Assets/catfish.jpg" alt="catfish" class="catfish" />
+        <img src="/Assets/lionfish.jpg" alt="lionfish" class="lionfish" />
       </div>
-      <img src="/Assets/sea lion.jpg" alt="sea lion" id="sea-lion" />
+      <img src="/Assets/sea lion.jpg" alt="sea lion" class="sea-lion" />
       <img
         src="/Assets/lemon butterflyfish.jpg"
         alt="butterflyfish"
-        id="butterfly"
+        class="butterfly"
       />
     </main>
     <footer>

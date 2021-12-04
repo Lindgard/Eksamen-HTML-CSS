@@ -3,8 +3,15 @@
   padding: 0;
 }
 
+:root {
+  --primary: #61c0c1;
+  --secondary: #04243c;
+  --tertiary: #34948c;
+  --background: #dae3e3;
+}
+
 body {
-  background-color: #dae3e3;
+  background-color: var(--background);
   font-family: Segoe UI, sans-serif;
 }
 
@@ -31,10 +38,23 @@ h1 {
 
 .logo {
   position: relative;
+  width: 10em;
   box-shadow: none;
   float: left;
 }
 
+/* checkbox og label for ren css-hamburger gjemt på desktop */
+.nav-toggler {
+  position: absolute;
+  top: -999px;
+  left: -999px;
+}
+
+.nav-toggler-label {
+  display: none;
+}
+
+/* nav-bar starter her */
 .nav-ul {
   display: flex;
   position: relative;
@@ -51,11 +71,11 @@ h1 {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 200%;
-  color: #04243c;
+  color: var(--secondary);
 }
 
 .nav-li:hover {
-  color: #61c0c1;
+  color: var(--primary);
 }
 
 .nav-li::before {
@@ -63,7 +83,7 @@ h1 {
   display: block;
   height: 5px;
   width: 0%;
-  background-color: #61c0c1;
+  background-color: var(--primary);
 
   position: absolute;
 }
@@ -87,7 +107,7 @@ h1 {
   width: 100%;
   text-align: center;
   font-size: 5em;
-  color: #04243c;
+  color: var(--secondary);
 }
 
 p {
@@ -117,24 +137,25 @@ form {
   font-size: x-large;
   display: flex;
   justify-content: center;
-  color: #04243c;
+  color: var(--secondary);
 }
 
-input, #txt-area {
+input,
+#txt-area {
   display: flex;
   width: 50%;
   margin: 1em;
   height: 3em;
   border-radius: 8px;
-  border: 2px solid #61c0c1;
-  box-shadow: 3px 6px 9px #61c0c1;
+  border: 2px solid var(--primary);
+  box-shadow: 3px 6px 9px var(--primary);
 }
 
 input:focus {
   outline: none;
 }
 
-#txt-area {
+.txt-area {
   width: 46%;
   height: 5em;
   resize: none;
@@ -143,13 +164,11 @@ input:focus {
   padding: 1em;
 }
 
-#submit {
+.submit {
   width: 30%;
   height: 5em;
   border-radius: 8px;
   border: none;
-  background-color: #61c0c1;
-  color: #04243c;
 
   text-transform: uppercase;
   font-weight: bold;
@@ -161,11 +180,11 @@ input:focus {
 
 @keyframes colorchange {
   from {
-    background-color: #61c0c1;
-    color: #04243c;
+    background-color: var(--primary);
+    color: var(--secondary);
   }
   to {
-    background-color: #04243c;
+    background-color: var(--secondary);
     color: white;
   }
 }
@@ -201,4 +220,140 @@ footer::after {
   width: 8%;
   margin: 3em 0 2em 0;
   box-shadow: none;
+}
+
+@media only screen and (max-width: 1100px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  header {
+    width: 100%;
+    position: sticky;
+  }
+
+  .logo {
+    float: right;
+    margin-right: 5vw;
+  }
+
+  .nav-toggler {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 2em;
+    display: none;
+    z-index: 2;
+  }
+
+  .nav-toggler-label {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 2em;
+    height: 100%;
+    align-items: center;
+  }
+
+  .nav-toggler:checked ~ nav {
+    transform: scale(1);
+  }
+
+  .nav-toggler-label span,
+  .nav-toggler-label span::before,
+  .nav-toggler-label span::after {
+    display: flex;
+    position: relative;
+    background-color: var(--secondary);
+    height: 0.7em;
+    width: 4em;
+    border-radius: 4px;
+  }
+
+  .nav-toggler-label span::before,
+  .nav-toggler-label span::after {
+    content: "";
+    position: absolute;
+  }
+
+  .nav-toggler-label span::before {
+    top: 20px;
+  }
+
+  .nav-toggler-label span::after {
+    bottom: 20px;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    margin-left: 0;
+    width: 100%;
+
+    transform: scale(1, 0);
+    transition: transform 250ms ease-in-out;
+  }
+
+  .nav-ul {
+    position: absolute;
+    display: flex;
+    width: 15%;
+    flex-direction: column;
+    list-style: none;
+    background-color: white;
+    padding: 1em 1em 1em 2em;
+  }
+
+  .nav-li {
+    font-size: 1.3em;
+    margin-top: 0.5em;
+    opacity: 0;
+
+    transition: opacity 250ms ease-in-out 300ms;
+  }
+
+  .nav-toggler:checked ~ nav a {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    position: sticky;
+    width: 100%;
+  }
+
+  .logo {
+    width: 15vw;
+    margin-right: 5vw;
+  }
+
+  .nav-toggler-label span,
+  .nav-toggler-label span::before,
+  .nav-toggler-label span::after {
+    height: 0.5em;
+    width: 3em;
+  }
+
+  .nav-ul {
+    width: 20%;
+    padding: 1em 1em 1em 2em;
+  }
+
+  .nav-li {
+    font-size: 1em;
+    margin-top: 0.5em;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+  }
 }

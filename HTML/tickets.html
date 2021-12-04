@@ -10,20 +10,26 @@
   <body>
     <header>
       <img
-        src="/Assets/Sandefjord Aquarium Logo.png"
+        src="/Assets/Sandefjord Aquarium logo.png"
         alt="Company logo"
         class="logo"
       />
-      <ul class="nav-ul">
-        <li><a href="/HTML/frontpage.html" class="nav-li">Hjem</a></li>
-        <li><a href="/HTML/contact.html" class="nav-li">Kontakt</a></li>
-      </ul>
+      <input type="checkbox" id="nav-toggler" class="nav-toggler" />
+      <nav class="navigation">
+        <ul class="nav-ul">
+          <li><a href="/HTML/frontpage.html" class="nav-li">Hjem</a></li>
+          <li><a href="/HTML/contact.html" class="nav-li">Kontakt</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggler" class="nav-toggler-label">
+        <span></span>
+      </label>
     </header>
     <main>
       <h1>Billetter</h1>
       <div class="grid-container">
         <div class="ticket-children">
-          <img src="/Assets/artsy fish.jpg" alt="blue fish" id="blue" />
+          <img src="/Assets/artsy fish.jpg" alt="blue fish" class="blue" />
           <div class="txt-children">
             <h3>Barnebillett</h3>
             <br />
@@ -33,6 +39,7 @@
               odio lobortis fringilla id ut turpis.
             </p>
             <br />
+
             <!--brukt en linje javascript fra w3schools for å slippe ekstra a-tagg-->
             <button
               onclick="document.location='/HTML/tickets.html'"
@@ -43,7 +50,7 @@
           </div>
         </div>
         <div class="ticket-youth">
-          <img src="/Assets/red fish.jpg" alt="red fish" id="red" />
+          <img src="/Assets/red fish.jpg" alt="red fish" class="red" />
           <div class="txt-youth">
             <h3>Ungdomsbillett</h3>
             <br />
@@ -65,7 +72,7 @@
           <img
             src="/Assets/siamese fighting fish.jpg"
             alt="siamese fighting fish"
-            id="siamese"
+            class="siamese"
           />
           <div class="txt-adults">
             <h3>Voksenbillett</h3>
@@ -85,7 +92,7 @@
           </div>
         </div>
         <div class="ticket-seasonpass">
-          <img src="/Assets/koi-fish.jpg" alt="koi" id="koi" />
+          <img src="/Assets/koi-fish.jpg" alt="koi" class="koi" />
           <div class="txt-season">
             <h3>Sesongkort for hele familien</h3>
             <br />
