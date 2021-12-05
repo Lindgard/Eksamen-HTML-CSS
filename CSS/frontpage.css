@@ -3,6 +3,7 @@
   padding: 0;
 }
 
+/* variabler for enklere fiksing av farger */
 :root {
   --primary: #61c0c1;
   --secondary: #04243c;
@@ -25,7 +26,7 @@ header {
   position: sticky;
   top: 0;
   height: fit-content;
-  width: 100%;
+  width: 99%;
   padding: 0.5%;
   background-color: white;
   opacity: 0.9;
@@ -40,7 +41,6 @@ header::after {
 }
 
 .logo {
-  position: relative;
   width: 10em;
   box-shadow: none;
   float: left;
@@ -52,10 +52,6 @@ header::after {
   position: absolute;
   top: -999px;
   left: -999px;
-}
-
-.nav-toggler-label {
-  display: none;
 }
 
 /* nav-bar starter her */
@@ -70,7 +66,6 @@ header::after {
 }
 
 .nav-li {
-  display: inline-block;
   position: relative;
   text-decoration: none;
   text-transform: uppercase;
@@ -94,13 +89,10 @@ header::after {
 
 .nav-li:hover::before {
   width: 100%;
-
-  transition: all ease-in-out 250ms;
+  transition: all ease-in-out 300ms;
 }
 
 main {
-  overflow: auto;
-  position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-areas:
@@ -114,7 +106,6 @@ main {
 
 .seal {
   grid-area: seal;
-  position: relative;
   width: 100%;
   margin-bottom: 0;
 }
@@ -128,9 +119,16 @@ main {
   border-radius: 15px;
   text-align: center;
   padding: 1.5em;
+  height: 42em;
+  overflow-y: scroll;
+}
+/* ville ikke ha stor stygg scrollbar ved siden av teksten*/
+.txt-box::-webkit-scrollbar {
+  width: 5px;
 }
 
 h2 {
+  margin-bottom: 1em;
   color: var(--primary);
 }
 
@@ -140,7 +138,11 @@ h2 {
 
 .img-container-2 {
   grid-area: container2;
-  height: fit-content;
+  display: grid;
+  grid-template-areas:
+    "catfish"
+    "lionfish";
+  gap: 0;
 }
 
 .catfish {
@@ -152,7 +154,6 @@ h2 {
 .lionfish {
   grid-area: lionfish;
   width: 100%;
-  margin-bottom: 0;
 }
 
 .sea-lion {
@@ -165,14 +166,10 @@ h2 {
   grid-area: butterfly;
   width: 100%;
   margin: 0;
-  padding: 0;
 }
 
 footer {
-  position: relative;
-  width: 100%;
   background-color: white;
-  bottom: 0;
 }
 
 footer::after {
@@ -184,13 +181,11 @@ footer::after {
 .social-media {
   display: flex;
   justify-content: space-evenly;
-  width: 100%;
 }
 
 .fb-icon,
 .insta-icon,
 .twitter-icon {
-  position: relative;
   width: 8%;
   margin: 3em 0 2em 0;
   box-shadow: none;
@@ -211,6 +206,8 @@ footer::after {
     margin-right: 5vw;
   }
 
+  /* brukt mye inspirasjon fra Kevin Powell på youtube*/
+  /* for en ren css hamburger-meny */
   .nav-toggler {
     position: absolute;
     top: 0;
@@ -237,10 +234,9 @@ footer::after {
   .nav-toggler-label span,
   .nav-toggler-label span::before,
   .nav-toggler-label span::after {
-    display: flex;
     position: relative;
     background-color: var(--secondary);
-    height: 0.7em;
+    height: 0.7vh;
     width: 4em;
     border-radius: 4px;
   }
@@ -252,16 +248,16 @@ footer::after {
   }
 
   .nav-toggler-label span::before {
-    top: 20px;
+    top: 15px;
   }
 
   .nav-toggler-label span::after {
-    bottom: 20px;
+    bottom: 15px;
   }
 
   .navigation {
     position: absolute;
-    top: 75%;
+    top: 80%;
     left: 0;
     margin-left: 0;
     width: 100%;
@@ -292,8 +288,6 @@ footer::after {
     opacity: 1;
   }
 
-  
-
   main {
     display: grid;
     width: 87vw;
@@ -302,11 +296,12 @@ footer::after {
       "txt container2"
       "txt container2"
       "sea-lion butterfly";
+    gap: 2em;
+    margin-left: 2em;
   }
 
   .txt-box {
-    height: 25em;
-    overflow-y: scroll;
+    height: 23em;
   }
 }
 
@@ -315,25 +310,35 @@ footer::after {
     display: flex;
     flex-direction: column;
   }
+
   header {
     position: sticky;
     width: 100%;
+    height: 9vh;
   }
 
   .logo {
-    width: 15vw;
+    width: 18vw;
     margin-right: 5vw;
   }
-  
+
   .nav-toggler-label span,
   .nav-toggler-label span::before,
   .nav-toggler-label span::after {
     height: 0.5em;
-    width: 3em;
+    width: 15vw;
+  }
+
+  .nav-toggler-label span::before {
+    top: 10px;
+  }
+
+  .nav-toggler-label span::after {
+    bottom: 10px;
   }
 
   .nav-ul {
-    width: 20%;
+    width: 25%;
     padding: 1em 1em 1em 2em;
   }
 
@@ -348,5 +353,9 @@ footer::after {
     margin: 0;
     padding: 1em;
     width: 90%;
+  }
+
+  .txt-box {
+    height: 20em;
   }
 }
