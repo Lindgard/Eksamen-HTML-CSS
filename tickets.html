@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/tickets.css" />
+    <title>Kjøp Billetter</title>
+  </head>
+  <body>
+    <header>
+      <img
+        src="/Assets/Sandefjord Aquarium logo.png"
+        alt="Company logo"
+        class="logo"
+      />
+      <input type="checkbox" id="nav-toggler" class="nav-toggler" />
+      <nav class="navigation">
+        <ul class="nav-ul">
+          <li><a href="/Eksamen-HTML-CSS/index.html" class="nav-li">Hjem</a></li>
+          <li><a href="/Eksamen-HTML-CSS/contact.html" class="nav-li">Kontakt</a></li>
+        </ul>
+      </nav>
+      <label for="nav-toggler" class="nav-toggler-label">
+        <span></span>
+      </label>
+    </header>
+    <main>
+      <h1>Billetter</h1>
+      <div class="grid-container">
+        <div class="ticket-children">
+          <img src="/Assets/artsy fish.jpg" alt="blue fish" class="blue" />
+          <div class="txt-children">
+            <h3>Barnebillett</h3>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
+              odio lobortis fringilla id ut turpis.
+            </p>
+            <br />
+
+            <!--brukt en linje javascript fra w3schools for å slippe ekstra a-tagg-->
+            <button
+              onclick="document.location='/HTML/tickets.html'"
+              class="price-1"
+            >
+              49,- kr
+            </button>
+          </div>
+        </div>
+        <div class="ticket-youth">
+          <img src="/Assets/red fish.jpg" alt="red fish" class="red" />
+          <div class="txt-youth">
+            <h3>Ungdomsbillett</h3>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
+              odio lobortis fringilla id ut turpis.
+            </p>
+            <br />
+            <button
+              onclick="document.location='/HTML/tickets.html'"
+              class="price-2"
+            >
+              79,- kr
+            </button>
+          </div>
+        </div>
+        <div class="ticket-adults">
+          <img
+            src="/Assets/siamese fighting fish.jpg"
+            alt="siamese fighting fish"
+            class="siamese"
+          />
+          <div class="txt-adults">
+            <h3>Voksenbillett</h3>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
+              odio lobortis fringilla id ut turpis.
+            </p>
+            <br />
+            <button
+              onclick="document.location='/HTML/tickets.html'"
+              class="price-3"
+            >
+              99,- kr
+            </button>
+          </div>
+        </div>
+        <div class="ticket-seasonpass">
+          <img src="/Assets/koi-fish.jpg" alt="koi" class="koi" />
+          <div class="txt-season">
+            <h3>Sesongkort for hele familien</h3>
+            <br />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              congue lacus at nisi aliquet tempor. Suspendisse eget tortor nec
+              odio lobortis fringilla id ut turpis.
+            </p>
+            <br />
+            <button
+              onclick="document.location='/HTML/tickets.html'"
+              class="price-4"
+            >
+              999,- kr
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="contact-container">
+        <p class="contact-txt">Hvis du har flere spørsmål kontakt oss her!</p>
+
+        <button
+          onclick="document.location='/HTML/contact.html'"
+          class="contact-btn"
+        >
+          Kontakt Oss
+        </button>
+      </div>
+    </main>
+    <footer>
+      <div class="social-media">
+        <img src="/Assets/Facebook icon.png" alt="Facebook" class="fb-icon" />
+        <img
+          src="/Assets/Instagram icon.png"
+          alt="Instagram"
+          class="insta-icon"
+        />
+        <img
+          src="/Assets/Twitter icon.png"
+          alt="Twitter"
+          class="twitter-icon"
+        />
+      </div>
+    </footer>
+  </body>
+</html>
